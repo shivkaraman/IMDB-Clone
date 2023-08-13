@@ -22,6 +22,12 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
+
+    //Scroll to top of the page when we move to some other page
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     //Managing navbar
     const controlNavbar = () => {
         if (window.scrollY > 200) {
