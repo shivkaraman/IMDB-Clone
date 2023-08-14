@@ -54,3 +54,18 @@
 .videoPopup.visible .videoPlayer {
     transform: scale(1);
 }
+
+.videoPopup .noTrailer {
+    height: 100%;
+    font-size: 24px;
+    color: var(--black-light);
+    /* background: var(--gradient); */
+    background: linear-gradient(
+        98.37deg,
+        rgba(4, 21, 45, 0) 0.99%,
+        #448ce3 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

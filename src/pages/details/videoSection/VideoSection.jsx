@@ -23,6 +23,7 @@ const VideosSection = ({ data, loading }) => {
         );
     };
 
+    if (data?.results.length === 0) return;
     return (
         <div className='videosSection'>
             <ContentWrapper>

@@ -21,13 +21,16 @@ const VideoPopup = ({ show, setShow, videoId, setVideoId }) => {
                 >
                     Close
                 </span>
-                <ReactPlayer
-                    url={`https://www.youtube.com/watch?v=${videoId}`}
-                    controls
-                    width='100%'
-                    height='100%'
-                    // playing={true}
-                />
+                {!!videoId ? (
+                    <ReactPlayer
+                        url={`https://www.youtube.com/watch?v=${videoId}`}
+                        controls
+                        width='100%'
+                        height='100%'
+                    />
+                ) : (
+                    <p className='noTrailer'>Trailer Not Found</p>
+                )}
             </div>
         </div>
     );

@@ -21,6 +21,7 @@ const Cast = ({ data, loading }) => {
             </div>
         );
     };
+    if (data?.length === 0) return;
     return (
         <div className='castSection'>
             <ContentWrapper>

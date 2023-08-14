@@ -69,7 +69,7 @@ function App() {
                         element={<Details />}
                     />
                     <Route
-                        path='/explore:mediaType'
+                        path='/explore/:mediaType'
                         element={<Explore />}
                     />
                     <Route
