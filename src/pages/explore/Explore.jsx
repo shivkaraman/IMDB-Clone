@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import './explore.css'
+import './explore.css';
 
 const Explore = () => {
-  return (
-    <div>Explore</div>
-  )
-}
+    return <div>Explore</div>;
+};
 
-export default Explore
+export default Explore;

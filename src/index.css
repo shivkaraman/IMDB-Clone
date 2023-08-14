@@ -55,7 +55,7 @@ body {
         rgba(#193763, 0)
     );
     animation: shimmer 2s infinite;
-    content: "";
+    content: '';
 }
 
 @keyframes shimmer {

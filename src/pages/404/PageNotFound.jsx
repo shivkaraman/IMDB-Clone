@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-import './pageNotFound.css'
+import './pageNotFound.css';
 
 const PageNotFound = () => {
-  return (
-    <div>PageNotFound</div>
-  )
-}
+    return <div>PageNotFound</div>;
+};
 
-export default PageNotFound
+export default PageNotFound;
