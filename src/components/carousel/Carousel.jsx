@@ -19,7 +19,7 @@ import PosterFallback from '../../assets/no-poster.png';
 //Styles
 import './carousel.css';
 
-const Carousel = ({ data, loading, title }) => {
+const Carousel = ({ data, loading, title, endpoint }) => {
     const carouselContainer = useRef();
     const { url } = useSelector((state) => state.home);
     const navigate = useNavigate();
