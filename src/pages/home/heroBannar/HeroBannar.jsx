@@ -9,7 +9,6 @@ import ContentWrapper from '../../../components/contentWrapper/ContentWrapper';
 
 //Styles
 import './heroBannar.css';
-import Img from '../../../components/imglazyLoader/ImageLazyLoader';
 
 const HeroBannar = () => {
     const [background, setBackground] = useState('');
@@ -19,7 +18,8 @@ const HeroBannar = () => {
     const { url } = useSelector((state) => state.home);
 
     const searchQueryHandler = (e) => {
-        if (e.key === 'Enter' && query.length > 0) {
+        e.preventDefault();
+        if (query.length > 0) {
             navigate(`/search/${query}`);
         }
     };
@@ -48,15 +48,17 @@ const HeroBannar = () => {
                         Millions of movies, TV shows and people to discover.
                         Explore now.
                     </span>
-                    <div className='searchInput'>
+                    <form
+                        className='searchInput'
+                        onSubmit={searchQueryHandler}
+                    >
                         <input
                             type='text'
                             placeholder='Search for a movie or tv show....'
                             onChange={(e) => setQuery(e.target.value)}
-                            onKeyUp={searchQueryHandler}
                         />
                         <button>Search</button>
-                    </div>
+                    </form>
                 </div>
             </ContentWrapper>
         </div>

@@ -27,7 +27,7 @@ const Header = () => {
         window.scrollTo(0, 0);
     }, [location]);
 
-    //Managing navbar
+    // Contriling when to show navbar and when to hide navbar
     const controlNavbar = () => {
         if (window.scrollY > 200) {
             //scrollY > lastScrollY => We are scrolling down. If this is false => We are scrolling up
@@ -67,6 +67,13 @@ const Header = () => {
             navigate('/explore/tv');
         }
         setMobileMenu(false);
+    };
+
+    const searchQueryHandler = (e) => {
+        e.preventDefault();
+        if (query.length > 0) {
+            navigate(`/search/${query}`);
+        }
     };
 
     return (
@@ -113,17 +120,19 @@ const Header = () => {
             {showSearch && (
                 <div className='searchBar'>
                     <ContentWrapper>
-                        <div className='searchInput'>
+                        <form
+                            className='searchInput'
+                            onSubmit={searchQueryHandler}
+                        >
                             <input
                                 type='text'
                                 placeholder='Search for a movie or tv show....'
                                 onChange={(e) => setQuery(e.target.value)}
-                                onKeyUp={searchQueryHandler}
                             />
                             <VscChromeClose
                                 onClick={() => setShowSearch(false)}
                             />
-                        </div>
+                        </form>
                     </ContentWrapper>
                 </div>
             )}

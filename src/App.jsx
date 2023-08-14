@@ -12,7 +12,6 @@ import PageNotFound from './pages/404/PageNotFound';
 import Details from './pages/details/Details';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import useFetch from './hooks/useFetch';
 
 function App() {
     const dispatch = useDispatch();
@@ -40,7 +39,6 @@ function App() {
         });
 
         const data = await Promise.all(promises);
-        // console.log(data);
         data.map(({ genres }) => {
             return genres.map((item) => (allGenres[item.id] = item));
         });
@@ -63,12 +61,12 @@ function App() {
                         element={<Home />}
                     />
                     <Route
-                        path='/:mediaType/:id'
-                        element={<Details />}
+                        path='/search/:query'
+                        element={<SearchResult />}
                     />
                     <Route
-                        path='/search:query'
-                        element={<SearchResult />}
+                        path='/:mediaType/:id'
+                        element={<Details />}
                     />
                     <Route
                         path='/explore:mediaType'
